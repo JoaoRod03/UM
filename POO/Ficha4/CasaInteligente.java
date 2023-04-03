@@ -20,11 +20,7 @@ public class CasaInteligente {
     }
 
     public List<Lampada> getLamps(){
-        List<Lampada> res = new ArrayList<>();
-        for (Lampada l : this.lamplist){
-            res.put(l.clone());
-        }
-        return res;
+        return new ArrayList<Lampada>(this.lamplist);
     }
 
     public void setLamps(List <Lampada> lampadas){
