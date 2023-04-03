@@ -90,12 +90,14 @@ public class GestaoEncomendas {
 
     public EncEficiente encomendaMaiorValor(){
         EncEficiente res = new EncEficiente();
+        double valor = 0;
         for (EncEficiente temp : this.encomendas.values()){
-            if(temp.calculaValorTotal() > res.calculaValorTotal()){
+            if(temp.calculaValorTotal() > valor){
                 res = temp;
+                valor = res.calculaValorTotal();
             }
         }
-        return res;
+        return res.clone();
     }
     
     public Map<String,List<Integer>> encomendasDeProduto() {
